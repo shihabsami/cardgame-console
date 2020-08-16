@@ -211,6 +211,7 @@ public class GameEngineImpl implements GameEngine
     {
         // the collection containing all the players
         List<Player> players = new LinkedList<>(PLAYERS.values());
+        // sort player collection by player id
         players.sort(Collections.reverseOrder());
         return players;
     }
