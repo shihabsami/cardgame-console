@@ -1,12 +1,12 @@
 package model;
 
+import java.util.Map;
+import java.util.HashMap;
+import java.util.List;
+import java.util.LinkedList;
+import java.util.Deque;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Deque;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
 
 import model.interfaces.GameEngine;
 import model.interfaces.Player;
@@ -227,20 +227,13 @@ public class GameEngineImpl implements GameEngine
         {
             for (PlayingCard.Value value : values)
             {
+                // points for ace = 11, king, queen, jack = 10, rest having their face value
                 switch (value)
                 {
-                    // points for ace = 11, king, queen, jack = 10, rest having their face value
-                    case ACE:
-                        deck.add(new PlayingCardImpl(suit, value, 11));
-                        break;
-                    case EIGHT:
-                        deck.add(new PlayingCardImpl(suit, value, 8));
-                        break;
-                    case NINE:
-                        deck.add(new PlayingCardImpl(suit, value, 9));
-                        break;
-                    default:
-                        deck.add(new PlayingCardImpl(suit, value, 10));
+                    case ACE -> deck.add(new PlayingCardImpl(suit, value, 11));
+                    case EIGHT -> deck.add(new PlayingCardImpl(suit, value, 8));
+                    case NINE -> deck.add(new PlayingCardImpl(suit, value, 9));
+                    default -> deck.add(new PlayingCardImpl(suit, value, 10));
                 }
             }
         }
