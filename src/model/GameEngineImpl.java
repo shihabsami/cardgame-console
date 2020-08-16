@@ -22,6 +22,9 @@ public class GameEngineImpl implements GameEngine
     @Override
     public void dealPlayer(Player player, int delay) throws IllegalArgumentException
     {
+        if (!PLAYERS.containsKey(player.getPlayerId()))
+            throw new IllegalArgumentException();
+
         PlayingCard card;
         int playerPoints = 0;
 
@@ -182,6 +185,9 @@ public class GameEngineImpl implements GameEngine
     @Override
     public boolean placeBet(Player player, int bet)
     {
+        if (!PLAYERS.containsKey(player.getPlayerId()))
+            throw new IllegalArgumentException();
+
         // reset player's previous bet before placing a new bet
         player.resetBet();
         return player.setBet(bet);
