@@ -26,6 +26,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="396aa864-4d88-4aa5-9471-7f0b4092f82d" name="Default Changelist" comment="CardGame 1.0&#10;&#10;The very first implementation of the card game.">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/GameEngineImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/GameEngineImpl.java" afterDir="false" />
     </list>
@@ -62,7 +63,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
@@ -139,7 +140,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597632004280</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="CardGame 1.0&#10;&#10;The very first implementation of the card game.">
+      <created>1597633031156</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1597633031156</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -182,18 +190,18 @@
       <screen x="0" y="23" width="1920" height="1009" />
     </state>
     <state width="1878" height="274" key="GridCell.Tab.0.right/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597574186950" />
-    <state x="601" y="296" key="MultipleFileMergeDialog" timestamp="1597631978629">
+    <state x="601" y="296" key="MultipleFileMergeDialog" timestamp="1597633057077">
       <screen x="0" y="23" width="1920" height="1009" />
     </state>
-    <state x="601" y="296" key="MultipleFileMergeDialog/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597631978629" />
-    <state x="469" y="166" key="SettingsEditor" timestamp="1597574078029">
+    <state x="601" y="296" key="MultipleFileMergeDialog/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597633057077" />
+    <state x="469" y="166" key="SettingsEditor" timestamp="1597636129744">
       <screen x="0" y="23" width="1920" height="1009" />
     </state>
-    <state x="469" y="166" key="SettingsEditor/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597574078029" />
-    <state x="560" y="267" key="Vcs.Push.Dialog.v2" timestamp="1597632946483">
+    <state x="469" y="166" key="SettingsEditor/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597636129744" />
+    <state x="560" y="267" key="Vcs.Push.Dialog.v2" timestamp="1597633078329">
       <screen x="0" y="23" width="1920" height="1009" />
     </state>
-    <state x="560" y="267" key="Vcs.Push.Dialog.v2/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597632946483" />
+    <state x="560" y="267" key="Vcs.Push.Dialog.v2/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597633078329" />
     <state x="682" y="268" key="VcsDiffUtil.ChangesDialog" timestamp="1597631537009">
       <screen x="0" y="23" width="1920" height="1009" />
     </state>

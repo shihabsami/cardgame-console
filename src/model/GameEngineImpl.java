@@ -87,7 +87,7 @@ public class GameEngineImpl implements GameEngine
     // private method to deal a card from the deck
     private PlayingCard dealCard(int delay)
     {
-        // delay between dealt cards
+        // the delay for dealing a card
         try
         {
             Thread.sleep(delay);
@@ -139,13 +139,10 @@ public class GameEngineImpl implements GameEngine
     {
         // compare player and house's points
         if (player.getResult() > houseResult)
-        {
             player.setPoints(player.getPoints() + player.getBet());
-        }
+
         else if (player.getResult() < houseResult)
-        {
             player.setPoints(player.getPoints() - player.getBet());
-        }
     }
 
     @Override
@@ -153,10 +150,10 @@ public class GameEngineImpl implements GameEngine
     {
         // if player with the same id exist, then replace the previous player
         if (PLAYERS.containsKey(player.getPlayerId()))
-        {
             PLAYERS.replace(player.getPlayerId(), player);
-        }
-        else PLAYERS.put(player.getPlayerId(), player);
+
+        else
+            PLAYERS.put(player.getPlayerId(), player);
     }
 
     @Override
@@ -164,9 +161,8 @@ public class GameEngineImpl implements GameEngine
     {
         // return if the player exists in the collection
         if (PLAYERS.containsKey(id))
-        {
             return PLAYERS.get(id);
-        }
+
         return null;
     }
 
@@ -217,8 +213,10 @@ public class GameEngineImpl implements GameEngine
     {
         // the collection containing all the players
         List<Player> players = new LinkedList<>(PLAYERS.values());
+
         // sort player collection by player id
         players.sort(Collections.reverseOrder());
+
         return players;
     }
 
@@ -237,10 +235,18 @@ public class GameEngineImpl implements GameEngine
                 // points for ace = 11, king, queen, jack = 10, rest having their face value
                 switch (value)
                 {
-                    case ACE -> deck.add(new PlayingCardImpl(suit, value, 11));
-                    case EIGHT -> deck.add(new PlayingCardImpl(suit, value, 8));
-                    case NINE -> deck.add(new PlayingCardImpl(suit, value, 9));
-                    default -> deck.add(new PlayingCardImpl(suit, value, 10));
+                    case ACE:
+                        deck.add(new PlayingCardImpl(suit, value, 11));
+                        break;
+                    case EIGHT:
+                        deck.add(new PlayingCardImpl(suit, value, 8));
+                        break;
+                    case NINE:
+                        deck.add(new PlayingCardImpl(suit, value, 9));
+                        break;
+                    default:
+                        deck.add(new PlayingCardImpl(suit, value, 10));
+                        break;
                 }
             }
         }
