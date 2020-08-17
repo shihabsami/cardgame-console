@@ -1,12 +1,12 @@
 package view;
 
-import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.logging.Handler;
 
-import model.interfaces.GameEngine;
 import model.interfaces.Player;
 import model.interfaces.PlayingCard;
+import model.interfaces.GameEngine;
 import view.interfaces.GameEngineCallback;
 
 /**
