@@ -22,7 +22,7 @@ public class GameEngineImpl implements GameEngine
     @Override
     public void dealPlayer(Player player, int delay) throws IllegalArgumentException
     {
-        if (!PLAYERS.containsKey(player.getPlayerId()))
+        if (!PLAYERS.containsKey(player.getPlayerId()) || delay < 0 || delay > 1000)
             throw new IllegalArgumentException();
 
         PlayingCard card;
@@ -55,6 +55,9 @@ public class GameEngineImpl implements GameEngine
     @Override
     public void dealHouse(int delay) throws IllegalArgumentException
     {
+        if (delay < 0)
+            throw new IllegalArgumentException();
+
         PlayingCard card;
         int housePoints = 0;
 
@@ -216,8 +219,7 @@ public class GameEngineImpl implements GameEngine
 
         // sort player collection by player id
         players.sort(Collections.reverseOrder());
-
-        return players;
+        return Collections.unmodifiableCollection(players);
     }
 
     @Override

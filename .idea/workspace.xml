@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -25,7 +28,18 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="396aa864-4d88-4aa5-9471-7f0b4092f82d" name="Default Changelist" comment="CardGame 1.0&#10;&#10;The very first implementation of the card game.">
+    <list default="true" id="396aa864-4d88-4aa5-9471-7f0b4092f82d" name="Default Changelist" comment="CardGame 1.2&#10;&#10;Few more updates.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CardGame/client/SimpleTestClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CardGame/client/SimpleTestClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CardGame/model/GameEngineImpl$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CardGame/model/GameEngineImpl$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CardGame/model/GameEngineImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CardGame/model/GameEngineImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CardGame/model/PlayingCardImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CardGame/model/PlayingCardImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CardGame/model/SimplePlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CardGame/model/SimplePlayer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CardGame/view/GameEngineCallbackImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CardGame/view/GameEngineCallbackImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/SimpleTestClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/SimpleTestClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/GameEngineImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/GameEngineImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/PlayingCardImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/PlayingCardImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/SimplePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/SimplePlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/GameEngineCallbackImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/GameEngineCallbackImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -80,6 +94,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -91,7 +116,8 @@
       <updated>1597573607444</updated>
       <workItem from="1597573613371" duration="565000" />
       <workItem from="1597574194543" duration="185000" />
-      <workItem from="1597654468615" duration="62000" />
+      <workItem from="1597654468615" duration="377000" />
+      <workItem from="1597763119772" duration="1473000" />
     </task>
     <task id="LOCAL-00001" summary="CardGame 1.0&#10;&#10;The very first implementation of the card game.">
       <created>1597574261477</created>
@@ -135,7 +161,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597633031156</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="CardGame 1.2&#10;&#10;Few more updates.">
+      <created>1597654779718</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1597654779719</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,29 +188,31 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="CardGame 1.0&#10;&#10;The very first implementation of the card game." />
-    <option name="LAST_COMMIT_MESSAGE" value="CardGame 1.0&#10;&#10;The very first implementation of the card game." />
+    <MESSAGE value="CardGame 1.1&#10;&#10;The very first implementation of the card game." />
+    <MESSAGE value="CardGame 1.2&#10;&#10;Few more updates." />
+    <option name="LAST_COMMIT_MESSAGE" value="CardGame 1.2&#10;&#10;Few more updates." />
   </component>
   <component name="WindowStateProjectService">
     <state x="424" y="189" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1597574086123">
       <screen x="0" y="23" width="1920" height="1009" />
     </state>
     <state x="424" y="189" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597574086123" />
-    <state width="1878" height="274" key="GridCell.Tab.0.bottom" timestamp="1597574186950">
+    <state width="1878" height="338" key="GridCell.Tab.0.bottom" timestamp="1597764514228">
       <screen x="0" y="23" width="1920" height="1009" />
     </state>
-    <state width="1878" height="274" key="GridCell.Tab.0.bottom/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597574186950" />
-    <state width="1878" height="274" key="GridCell.Tab.0.center" timestamp="1597574186949">
+    <state width="1878" height="338" key="GridCell.Tab.0.bottom/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597764514228" />
+    <state width="1878" height="338" key="GridCell.Tab.0.center" timestamp="1597764514227">
       <screen x="0" y="23" width="1920" height="1009" />
     </state>
-    <state width="1878" height="274" key="GridCell.Tab.0.center/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597574186949" />
-    <state width="1878" height="274" key="GridCell.Tab.0.left" timestamp="1597574186948">
+    <state width="1878" height="338" key="GridCell.Tab.0.center/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597764514227" />
+    <state width="1878" height="338" key="GridCell.Tab.0.left" timestamp="1597764514225">
       <screen x="0" y="23" width="1920" height="1009" />
     </state>
-    <state width="1878" height="274" key="GridCell.Tab.0.left/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597574186948" />
-    <state width="1878" height="274" key="GridCell.Tab.0.right" timestamp="1597574186950">
+    <state width="1878" height="338" key="GridCell.Tab.0.left/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597764514225" />
+    <state width="1878" height="338" key="GridCell.Tab.0.right" timestamp="1597764514228">
       <screen x="0" y="23" width="1920" height="1009" />
     </state>
-    <state width="1878" height="274" key="GridCell.Tab.0.right/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597574186950" />
+    <state width="1878" height="338" key="GridCell.Tab.0.right/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597764514228" />
     <state x="601" y="296" key="MultipleFileMergeDialog" timestamp="1597633057077">
       <screen x="0" y="23" width="1920" height="1009" />
     </state>
@@ -186,17 +221,31 @@
       <screen x="0" y="23" width="1920" height="1009" />
     </state>
     <state x="469" y="166" key="SettingsEditor/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597636129744" />
-    <state x="560" y="267" key="Vcs.Push.Dialog.v2" timestamp="1597633078329">
+    <state x="560" y="267" key="Vcs.Push.Dialog.v2" timestamp="1597654792352">
       <screen x="0" y="23" width="1920" height="1009" />
     </state>
-    <state x="560" y="267" key="Vcs.Push.Dialog.v2/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597633078329" />
+    <state x="560" y="267" key="Vcs.Push.Dialog.v2/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597654792352" />
     <state x="682" y="268" key="VcsDiffUtil.ChangesDialog" timestamp="1597631537009">
       <screen x="0" y="23" width="1920" height="1009" />
     </state>
     <state x="682" y="268" key="VcsDiffUtil.ChangesDialog/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597631537009" />
+    <state x="492" y="270" width="935" height="617" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1597764488220">
+      <screen x="0" y="23" width="1920" height="1009" />
+    </state>
+    <state x="492" y="270" width="935" height="617" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597764488220" />
     <state x="683" y="426" key="git4idea.rebase.GitUnstructuredEditor" timestamp="1597631795486">
       <screen x="0" y="23" width="1920" height="1009" />
     </state>
     <state x="683" y="426" key="git4idea.rebase.GitUnstructuredEditor/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597631795486" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IllegalArgumentException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

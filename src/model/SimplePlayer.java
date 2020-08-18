@@ -1,6 +1,7 @@
 package model;
 
 import model.interfaces.Player;
+import model.interfaces.PlayingCard;
 
 public class SimplePlayer implements Player
 {
@@ -96,7 +97,10 @@ public class SimplePlayer implements Player
     public boolean equals(Object player)
     {
         // cast and call to the type checked method
-        return equals((SimplePlayer) player);
+        if (player instanceof Player)
+            return equals((SimplePlayer) player);
+
+        return false;
     }
 
     @Override

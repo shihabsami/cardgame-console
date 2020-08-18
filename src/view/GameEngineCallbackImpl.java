@@ -17,11 +17,13 @@ import view.interfaces.GameEngineCallback;
  * @see view.interfaces.GameEngineCallback
  *
  */
+
 public class GameEngineCallbackImpl implements GameEngineCallback
 {
     public static final Logger logger = Logger.getLogger(GameEngineCallbackImpl.class.getName());
 
     // utility method to set output level of logging handlers
+    @SuppressWarnings("unused")
     public static Logger setAllHandlers(Level level, Logger logger, boolean recursive)
     {
         // end recursion?
@@ -46,46 +48,42 @@ public class GameEngineCallbackImpl implements GameEngineCallback
     public void nextCard(Player player, PlayingCard card, GameEngine engine)
     {
         // intermediate results logged at Level.FINE
-        logger.log(Level.FINE, String.format("Card Dealt to %s .. Suit: %s, Value: %s, Score: %d",
-                player.getPlayerName(), card.getSuit(), card.getValue(), card.getScore()));
+        logger.log(Level.FINE, String.format("Card Dealt to %s .. %s", player.getPlayerName(), card.toString()));
     }
 
     @Override
     public void bustCard(Player player, PlayingCard card, GameEngine engine)
     {
         // intermediate results logged at Level.FINE
-        logger.log(Level.FINE, String.format("Card Dealt to %s .. Suit: %s, Value: %s, Score: %d ... YOU BUSTED!",
-                player.getPlayerName(), card.getSuit(), card.getValue(), card.getScore()));
+        logger.log(Level.INFO, String.format("Card Dealt to %s .. %s", player.getPlayerName(), card.toString()));
     }
 
     @Override
     public void result(Player player, int result, GameEngine engine)
     {
         // final results logged at Level.INFO
-        logger.log(Level.INFO, String.format("%s, Final Result = %d",
-                player.getPlayerName(), result));
+        logger.log(Level.INFO, String.format("%s, Final Result = %d", player.getPlayerName(), result));
     }
 
     @Override
     public void nextHouseCard(PlayingCard card, GameEngine engine)
     {
         // intermediate results logged at Level.FINE
-        logger.log(Level.FINE, String.format("Card Dealt to House .. Suit: %s, Value: %s, Score: %d",
-                card.getSuit(), card.getValue(), card.getScore()));
+        logger.log(Level.INFO, String.format("Card Dealt to House .. %s", card.toString()));
     }
 
     @Override
     public void houseBustCard(PlayingCard card, GameEngine engine)
     {
         // intermediate results logged at Level.FINE
-        logger.log(Level.FINE, String.format("Card Dealt to House .. Suit: %s, Value: %s, Score: %d ... HOUSE BUSTED!",
-                card.getSuit(), card.getValue(), card.getScore()));
+        logger.log(Level.FINE, String.format("Card Dealt to House .. %s ... HOUSE BUSTED!", card.toString()));
     }
 
     @Override
     public void houseResult(int result, GameEngine engine)
     {
         StringBuilder finalResult = new StringBuilder();
+
         for (Player player : engine.getAllPlayers())
             finalResult.append(String.format("%s\n", player.toString()));
 

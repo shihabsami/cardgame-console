@@ -32,7 +32,7 @@ public class SimpleTestClient
       // call method in Validator.jar to test *structural* correctness
       // just passing this does not mean it actually works .. you need to test yourself!
       // pass false if you want to disable logging .. (i.e. once it passes)
-      Validator.validate(false);
+      Validator.validate(true);
 
       // create two test players
       Player[] players = new Player[] { new SimplePlayer("2", "The Shark", 1000), new SimplePlayer(
@@ -42,15 +42,15 @@ public class SimpleTestClient
       gameEngine.addGameEngineCallback(new GameEngineCallbackImpl());
 
       // Uncomment this to DEBUG your deck of cards creation
-      // Deque<PlayingCard> shuffledDeck = gameEngine.getShuffledHalfDeck();
-      // printCards(shuffledDeck);
+      Deque<PlayingCard> shuffledDeck = gameEngine.getShuffledHalfDeck();
+      printCards(shuffledDeck);
 
       // main loop to add players, place a bet and receive hand
       for (Player player : players)
       {
          gameEngine.addPlayer(player);
          gameEngine.placeBet(player, 100);
-         gameEngine.dealPlayer(player, 100);
+         gameEngine.dealPlayer(player, 1100);
       }
 
       // all players have played so now house deals 

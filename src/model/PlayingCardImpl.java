@@ -44,7 +44,10 @@ public class PlayingCardImpl implements PlayingCard
     public boolean equals(Object card)
     {
         // cast and call the type checked method
-        return equals((PlayingCard) card);
+        if (card instanceof PlayingCard)
+            return equals((PlayingCard) card);
+
+        return false;
     }
 
     @Override
@@ -54,10 +57,20 @@ public class PlayingCardImpl implements PlayingCard
         return SUIT.hashCode() + VALUE.hashCode();
     }
 
+    private String toTitleCase(PlayingCard.Value value)
+    {
+        return value.name().charAt(0) + value.name().substring(1).toLowerCase();
+    }
+
+    private String toTitleCase(PlayingCard.Suit suit)
+    {
+        return suit.name().charAt(0) + suit.name().substring(1).toLowerCase();
+    }
+
     @Override
     public String toString()
     {
         return String.format("Suit: %s, Value: %s, Score: %d",
-                SUIT, VALUE, SCORE);
+                toTitleCase(SUIT), toTitleCase(VALUE), SCORE);
     }
 }
