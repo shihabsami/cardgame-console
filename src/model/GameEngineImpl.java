@@ -1,7 +1,7 @@
 package model;
 
 import java.util.Map;
-import java.util.HashMap;
+import java.util.TreeMap;
 import java.util.List;
 import java.util.LinkedList;
 import java.util.Deque;
@@ -16,7 +16,7 @@ import view.interfaces.GameEngineCallback;
 public class GameEngineImpl implements GameEngine
 {
     private Deque<PlayingCard> deck = getShuffledHalfDeck();
-    private final Map<String, Player> PLAYERS = new HashMap<>();
+    private final Map<String, Player> PLAYERS = new TreeMap<>();
     private final List<GameEngineCallback> CALLBACKS = new LinkedList<>();
 
     @Override
@@ -118,7 +118,7 @@ public class GameEngineImpl implements GameEngine
      *
      * @param player - the Player to whom the card is dealt
      * @param card - the dealt PlayingCard
-     * @param playerPoints - the number of points the player obtained from the round
+     * @param playerPoints - the number of player obtained points as of the last card deal
      */
     private void logger(Player player, PlayingCard card, int playerPoints)
     {
@@ -140,7 +140,7 @@ public class GameEngineImpl implements GameEngine
      * An overload of the previous logger method to log the house's round events.
      *
      * @param card - the dealt PlayingCard
-     * @param housePoints - the number of points the house obtained from the round
+     * @param housePoints - the number of house obtained points as of the last card deal
      */
     private void logger(PlayingCard card, int housePoints)
     {
@@ -229,11 +229,7 @@ public class GameEngineImpl implements GameEngine
     public Collection<Player> getAllPlayers()
     {
         // the collection containing all the players
-        List<Player> players = new LinkedList<>(PLAYERS.values());
-
-        // sort player collection by player id
-        players.sort(Collections.reverseOrder());
-        return Collections.unmodifiableCollection(players);
+        return Collections.unmodifiableCollection(PLAYERS.values());
     }
 
     @Override
