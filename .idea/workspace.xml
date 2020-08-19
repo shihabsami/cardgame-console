@@ -28,14 +28,8 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="396aa864-4d88-4aa5-9471-7f0b4092f82d" name="Default Changelist" comment="CardGame 1.2&#10;&#10;Few more updates.">
+    <list default="true" id="396aa864-4d88-4aa5-9471-7f0b4092f82d" name="Default Changelist" comment="CardGame 1.3&#10;&#10;Some major changes including throwing exceptions, unmodifiable collections, updating PlayingCard.toString and callback implementations.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CardGame/client/SimpleTestClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CardGame/client/SimpleTestClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CardGame/model/GameEngineImpl$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CardGame/model/GameEngineImpl$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CardGame/model/GameEngineImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CardGame/model/GameEngineImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CardGame/model/PlayingCardImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CardGame/model/PlayingCardImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CardGame/model/SimplePlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CardGame/model/SimplePlayer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CardGame/view/GameEngineCallbackImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CardGame/view/GameEngineCallbackImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/SimpleTestClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/SimpleTestClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/GameEngineImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/GameEngineImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/PlayingCardImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/PlayingCardImpl.java" afterDir="false" />
@@ -94,13 +88,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -117,7 +113,8 @@
       <workItem from="1597573613371" duration="565000" />
       <workItem from="1597574194543" duration="185000" />
       <workItem from="1597654468615" duration="377000" />
-      <workItem from="1597763119772" duration="1473000" />
+      <workItem from="1597763119772" duration="1896000" />
+      <workItem from="1597805033133" duration="4320000" />
     </task>
     <task id="LOCAL-00001" summary="CardGame 1.0&#10;&#10;The very first implementation of the card game.">
       <created>1597574261477</created>
@@ -168,7 +165,21 @@
       <option name="project" value="LOCAL" />
       <updated>1597654779719</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="CardGame 1.3&#10;&#10;Some major changes including throwing exceptions, unmodifiable collections, updating PlayingCard.toString.">
+      <created>1597764659641</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1597764659641</updated>
+    </task>
+    <task id="LOCAL-00009" summary="CardGame 1.3&#10;&#10;Some major changes including throwing exceptions, unmodifiable collections, updating PlayingCard.toString and callback implementations.">
+      <created>1597764846990</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1597764846990</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,41 +201,51 @@
     <MESSAGE value="CardGame 1.0&#10;&#10;The very first implementation of the card game." />
     <MESSAGE value="CardGame 1.1&#10;&#10;The very first implementation of the card game." />
     <MESSAGE value="CardGame 1.2&#10;&#10;Few more updates." />
-    <option name="LAST_COMMIT_MESSAGE" value="CardGame 1.2&#10;&#10;Few more updates." />
+    <MESSAGE value="CardGame 1.3&#10;&#10;Some major changes including throwing exceptions, unmodifiable collections, updating PlayingCard.toString." />
+    <MESSAGE value="CardGame 1.3&#10;&#10;Some major changes including throwing exceptions, unmodifiable collections, updating PlayingCard.toString and callback implementations." />
+    <option name="LAST_COMMIT_MESSAGE" value="CardGame 1.3&#10;&#10;Some major changes including throwing exceptions, unmodifiable collections, updating PlayingCard.toString and callback implementations." />
   </component>
   <component name="WindowStateProjectService">
+    <state x="594" y="213" key="#Inspections" timestamp="1597806706680">
+      <screen x="0" y="23" width="1920" height="1009" />
+    </state>
+    <state x="594" y="213" key="#Inspections/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597806706680" />
     <state x="424" y="189" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1597574086123">
       <screen x="0" y="23" width="1920" height="1009" />
     </state>
     <state x="424" y="189" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597574086123" />
-    <state width="1878" height="338" key="GridCell.Tab.0.bottom" timestamp="1597764514228">
+    <state x="100" y="123" width="1720" height="809" key="DiffContextDialog" timestamp="1597764924000">
       <screen x="0" y="23" width="1920" height="1009" />
     </state>
-    <state width="1878" height="338" key="GridCell.Tab.0.bottom/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597764514228" />
-    <state width="1878" height="338" key="GridCell.Tab.0.center" timestamp="1597764514227">
+    <state x="100" y="123" width="1720" height="809" key="DiffContextDialog/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597764924000" />
+    <state width="1878" height="274" key="GridCell.Tab.0.bottom" timestamp="1597812313296">
       <screen x="0" y="23" width="1920" height="1009" />
     </state>
-    <state width="1878" height="338" key="GridCell.Tab.0.center/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597764514227" />
-    <state width="1878" height="338" key="GridCell.Tab.0.left" timestamp="1597764514225">
+    <state width="1878" height="274" key="GridCell.Tab.0.bottom/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597812313296" />
+    <state width="1878" height="274" key="GridCell.Tab.0.center" timestamp="1597812313295">
       <screen x="0" y="23" width="1920" height="1009" />
     </state>
-    <state width="1878" height="338" key="GridCell.Tab.0.left/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597764514225" />
-    <state width="1878" height="338" key="GridCell.Tab.0.right" timestamp="1597764514228">
+    <state width="1878" height="274" key="GridCell.Tab.0.center/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597812313295" />
+    <state width="1878" height="274" key="GridCell.Tab.0.left" timestamp="1597812313293">
       <screen x="0" y="23" width="1920" height="1009" />
     </state>
-    <state width="1878" height="338" key="GridCell.Tab.0.right/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597764514228" />
-    <state x="601" y="296" key="MultipleFileMergeDialog" timestamp="1597633057077">
+    <state width="1878" height="274" key="GridCell.Tab.0.left/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597812313293" />
+    <state width="1878" height="274" key="GridCell.Tab.0.right" timestamp="1597812313296">
       <screen x="0" y="23" width="1920" height="1009" />
     </state>
-    <state x="601" y="296" key="MultipleFileMergeDialog/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597633057077" />
+    <state width="1878" height="274" key="GridCell.Tab.0.right/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597812313296" />
+    <state x="461" y="314" key="MultipleFileMergeDialog" timestamp="1597764882931">
+      <screen x="0" y="23" width="1920" height="1009" />
+    </state>
+    <state x="461" y="314" key="MultipleFileMergeDialog/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597764882931" />
     <state x="469" y="166" key="SettingsEditor" timestamp="1597636129744">
       <screen x="0" y="23" width="1920" height="1009" />
     </state>
     <state x="469" y="166" key="SettingsEditor/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597636129744" />
-    <state x="560" y="267" key="Vcs.Push.Dialog.v2" timestamp="1597654792352">
+    <state x="560" y="267" key="Vcs.Push.Dialog.v2" timestamp="1597764908038">
       <screen x="0" y="23" width="1920" height="1009" />
     </state>
-    <state x="560" y="267" key="Vcs.Push.Dialog.v2/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597654792352" />
+    <state x="560" y="267" key="Vcs.Push.Dialog.v2/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597764908038" />
     <state x="682" y="268" key="VcsDiffUtil.ChangesDialog" timestamp="1597631537009">
       <screen x="0" y="23" width="1920" height="1009" />
     </state>

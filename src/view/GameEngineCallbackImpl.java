@@ -62,7 +62,7 @@ public class GameEngineCallbackImpl implements GameEngineCallback
     public void result(Player player, int result, GameEngine engine)
     {
         // final results logged at Level.INFO
-        logger.log(Level.INFO, String.format("%s, Final Result = %d", player.getPlayerName(), result));
+        logger.log(Level.INFO, String.format("%s, final result=%d", player.getPlayerName(), result));
     }
 
     @Override
@@ -88,7 +88,7 @@ public class GameEngineCallbackImpl implements GameEngineCallback
             finalResult.append(String.format("%s\n", player.toString()));
 
         // final results logged at Level.INFO
-        logger.log(Level.INFO, String.format("House, Final Result = %d", result));
+        logger.log(Level.INFO, String.format("House, final result=%d", result));
         logger.log(Level.INFO, String.format("Final Player Results\n%s", finalResult));
     }
 }

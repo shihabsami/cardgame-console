@@ -50,7 +50,7 @@ public class SimpleTestClient
       {
          gameEngine.addPlayer(player);
          gameEngine.placeBet(player, 100);
-         gameEngine.dealPlayer(player, 1100);
+         gameEngine.dealPlayer(player, 100);
       }
 
       // all players have played so now house deals 

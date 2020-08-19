@@ -15,14 +15,14 @@ import view.interfaces.GameEngineCallback;
 
 public class GameEngineImpl implements GameEngine
 {
+    private Deque<PlayingCard> deck = getShuffledHalfDeck();
     private final Map<String, Player> PLAYERS = new HashMap<>();
-    private final Deque<PlayingCard> DECK = getShuffledHalfDeck();
     private final List<GameEngineCallback> CALLBACKS = new LinkedList<>();
 
     @Override
     public void dealPlayer(Player player, int delay) throws IllegalArgumentException
     {
-        if (!PLAYERS.containsKey(player.getPlayerId()) || delay < 0 || delay > 1000)
+        if (delay < 0 || delay > 1000)
             throw new IllegalArgumentException();
 
         PlayingCard card;
@@ -45,6 +45,7 @@ public class GameEngineImpl implements GameEngine
             }
         }
 
+        // update the result of the player's most recent hand
         player.setResult(playerPoints);
 
         // log the player's results of the round
@@ -85,12 +86,23 @@ public class GameEngineImpl implements GameEngine
         // log final results once round ends
         for (GameEngineCallback callback : CALLBACKS)
             callback.houseResult(housePoints, this);
+
+        // reset players' previous bet for next round
+        for (Player player : PLAYERS.values())
+            player.resetBet();
+
+        // reset the deck of cards once round ends
+        deck = getShuffledHalfDeck();
     }
 
-    // private method to deal a card from the deck
+    /**
+     * Utility method to deal a card from the deck.
+     *
+     * @param delay - the delay in between dealing a card
+     * @return a PlayingCard removed from the top of the deck
+     */
     private PlayingCard dealCard(int delay)
     {
-        // the delay for dealing a card
         try
         {
             Thread.sleep(delay);
@@ -99,10 +111,15 @@ public class GameEngineImpl implements GameEngine
         {
             exception.printStackTrace();
         }
-        return DECK.pop();
+        return deck.pop();
     }
 
-    // private method to log the player's round events
+    /** Utility method to log the player's round events.
+     *
+     * @param player - the Player to whom the card is dealt
+     * @param card - the dealt PlayingCard
+     * @param playerPoints - the number of points the player obtained from the round
+     */
     private void logger(Player player, PlayingCard card, int playerPoints)
     {
         if (playerPoints > BUST_LEVEL)
@@ -119,10 +136,14 @@ public class GameEngineImpl implements GameEngine
         }
     }
 
-    // an overload of the previous logger method to log the house's round events
+    /**
+     * An overload of the previous logger method to log the house's round events.
+     *
+     * @param card - the dealt PlayingCard
+     * @param housePoints - the number of points the house obtained from the round
+     */
     private void logger(PlayingCard card, int housePoints)
     {
-        // if the card causes the house to bust
         if (housePoints > BUST_LEVEL)
         {
             // log the details of the card that caused the bust
@@ -140,10 +161,9 @@ public class GameEngineImpl implements GameEngine
     @Override
     public void applyWinLoss(Player player, int houseResult)
     {
-        // compare player and house's points
+        // compare the points of player and house
         if (player.getResult() > houseResult)
             player.setPoints(player.getPoints() + player.getBet());
-
         else if (player.getResult() < houseResult)
             player.setPoints(player.getPoints() - player.getBet());
     }
@@ -151,10 +171,9 @@ public class GameEngineImpl implements GameEngine
     @Override
     public void addPlayer(Player player)
     {
-        // if player with the same id exist, then replace the previous player
+        // if player with the same id exists, then replace the previous player
         if (PLAYERS.containsKey(player.getPlayerId()))
             PLAYERS.replace(player.getPlayerId(), player);
-
         else
             PLAYERS.put(player.getPlayerId(), player);
     }
@@ -162,7 +181,7 @@ public class GameEngineImpl implements GameEngine
     @Override
     public Player getPlayer(String id)
     {
-        // return if the player exists in the collection
+        // if the player exists in the collection
         if (PLAYERS.containsKey(id))
             return PLAYERS.get(id);
 
@@ -184,11 +203,6 @@ public class GameEngineImpl implements GameEngine
     @Override
     public boolean placeBet(Player player, int bet)
     {
-        if (!PLAYERS.containsKey(player.getPlayerId()))
-            throw new IllegalArgumentException();
-
-        // reset player's previous bet before placing a new bet
-        player.resetBet();
         return player.setBet(bet);
     }
 
@@ -226,15 +240,13 @@ public class GameEngineImpl implements GameEngine
     public Deque<PlayingCard> getShuffledHalfDeck()
     {
         List<PlayingCard> deck = new LinkedList<>();
-        PlayingCard.Suit[] suits = PlayingCard.Suit.values();
-        PlayingCard.Value[] values = PlayingCard.Value.values();
 
-        // populate the deck of cards
-        for (PlayingCard.Suit suit : suits)
+        // nested loops to populate the deck of cards
+        for (PlayingCard.Suit suit : PlayingCard.Suit.values())
         {
-            for (PlayingCard.Value value : values)
+            for (PlayingCard.Value value : PlayingCard.Value.values())
             {
-                // points for ace = 11, king, queen, jack = 10, rest having their face value
+                // points for ace = 11, king, queen, jack = 10, rest of their face value
                 switch (value)
                 {
                     case ACE:

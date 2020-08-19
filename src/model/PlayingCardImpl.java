@@ -34,16 +34,23 @@ public class PlayingCardImpl implements PlayingCard
     }
 
     @Override
+    public String toString()
+    {
+        return String.format("Suit: %s, Value: %s, Score: %d",
+                toTitleCase(SUIT), toTitleCase(VALUE), SCORE);
+    }
+
+    @Override
     public boolean equals(PlayingCard card)
     {
-        // equal if both cards have the same suit and value
+        // equal if both cards have the same suit and face value
         return (VALUE == card.getValue() && SUIT == card.getSuit());
     }
 
     @Override
     public boolean equals(Object card)
     {
-        // cast and call the type checked method
+        // cast the object and call through to the type checked method
         if (card instanceof PlayingCard)
             return equals((PlayingCard) card);
 
@@ -53,24 +60,29 @@ public class PlayingCardImpl implements PlayingCard
     @Override
     public int hashCode()
     {
-        // hashcode generated based on the card's unique attributes
+        // hashcode generated based on the card's suit and face value attributes
         return SUIT.hashCode() + VALUE.hashCode();
     }
 
-    private String toTitleCase(PlayingCard.Value value)
-    {
-        return value.name().charAt(0) + value.name().substring(1).toLowerCase();
-    }
-
+    /**
+     * Utility method to retrieve a card's suit in title case.
+     *
+     * @param suit - enum constant of type Suit
+     * @return a title cased String representation of the PlayingCard's suit enum
+     */
     private String toTitleCase(PlayingCard.Suit suit)
     {
         return suit.name().charAt(0) + suit.name().substring(1).toLowerCase();
     }
 
-    @Override
-    public String toString()
+    /**
+     * Utility method to retrieve a card's face value in title case.
+     *
+     * @param value - enum constant of type Value
+     * @return a title cased String representation of the PlayingCard's value enum
+     */
+    private String toTitleCase(PlayingCard.Value value)
     {
-        return String.format("Suit: %s, Value: %s, Score: %d",
-                toTitleCase(SUIT), toTitleCase(VALUE), SCORE);
+        return value.name().charAt(0) + value.name().substring(1).toLowerCase();
     }
 }

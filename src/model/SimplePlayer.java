@@ -1,11 +1,10 @@
 package model;
 
 import model.interfaces.Player;
-import model.interfaces.PlayingCard;
 
 public class SimplePlayer implements Player
 {
-    private final String ID;
+    private String id;
     private String playerName;
     private int points;
     private int bet;
@@ -13,15 +12,9 @@ public class SimplePlayer implements Player
 
     public SimplePlayer(String id, String playerName, int initialPoints)
     {
-        ID = id;
+        this.id = id;
         this.playerName = playerName;
         this.points = initialPoints;
-    }
-
-    @Override
-    public String getPlayerId()
-    {
-        return ID;
     }
 
     @Override
@@ -49,9 +42,9 @@ public class SimplePlayer implements Player
     }
 
     @Override
-    public int getBet()
+    public String getPlayerId()
     {
-        return bet;
+        return id;
     }
 
     @Override
@@ -69,8 +62,15 @@ public class SimplePlayer implements Player
     }
 
     @Override
+    public int getBet()
+    {
+        return bet;
+    }
+
+    @Override
     public void resetBet()
     {
+        // reset the bet to 0
         bet = 0;
     }
 
@@ -89,14 +89,14 @@ public class SimplePlayer implements Player
     @Override
     public boolean equals(Player player)
     {
-        // equal if both player have the same id
-        return ID.equals(player.getPlayerId());
+        // equal if both players have the same id
+        return id.equals(player.getPlayerId());
     }
 
     @Override
     public boolean equals(Object player)
     {
-        // cast and call to the type checked method
+        // cast the object and call through to the type checked method
         if (player instanceof Player)
             return equals((SimplePlayer) player);
 
@@ -106,21 +106,21 @@ public class SimplePlayer implements Player
     @Override
     public int hashCode()
     {
-        // hashcode generated based on the player's unique attribute
-        return ID.hashCode();
+        // hashcode generated based on the player's id attribute
+        return id.hashCode();
     }
 
     @Override
     public int compareTo(Player player)
     {
-        // compare players based on the players' IDs
-        return player.getPlayerId().compareTo(ID);
+        // compare players based on id
+        return player.getPlayerId().compareTo(id);
     }
 
     @Override
     public String toString()
     {
-        return String.format("Player: ID: %s, Name: %s, Bet: %d, Points: %d, Result: %d",
-                ID, playerName, bet, points, result);
+        return String.format("Player: id=%s, name=%s, bet=%d, points=%d, RESULT .. %d",
+                id, playerName, bet, points, result);
     }
 }
