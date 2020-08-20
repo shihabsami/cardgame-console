@@ -1,9 +1,9 @@
 package model;
 
-import java.util.Map;
-import java.util.HashMap;
 import java.util.List;
 import java.util.LinkedList;
+import java.util.Map;
+import java.util.TreeMap;
 import java.util.Deque;
 import java.util.Collection;
 import java.util.Collections;
@@ -16,7 +16,7 @@ import view.interfaces.GameEngineCallback;
 public class GameEngineImpl implements GameEngine
 {
     private Deque<PlayingCard> deck = getShuffledHalfDeck();
-    private final Map<String, Player> PLAYERS = new HashMap<>();
+    private final Map<String, Player> PLAYERS = new TreeMap<>();
     private final List<GameEngineCallback> CALLBACKS = new LinkedList<>();
 
     @Override
@@ -229,11 +229,7 @@ public class GameEngineImpl implements GameEngine
     public Collection<Player> getAllPlayers()
     {
         // the collection containing all the players
-        List<Player> players = new LinkedList<>(PLAYERS.values());
-
-        // sort player collection by player id
-        players.sort(Collections.reverseOrder());
-        return Collections.unmodifiableCollection(players);
+        return Collections.unmodifiableCollection(PLAYERS.values());
     }
 
     @Override

@@ -22,19 +22,20 @@
     <select>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="396aa864-4d88-4aa5-9471-7f0b4092f82d" name="Default Changelist" comment="CardGame 1.3&#10;&#10;Some major changes including throwing exceptions, unmodifiable collections, updating PlayingCard.toString and callback implementations.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/SimpleTestClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/SimpleTestClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CardGame/client/SimpleTestClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CardGame/client/SimpleTestClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CardGame/model/GameEngineImpl$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CardGame/model/GameEngineImpl$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CardGame/model/GameEngineImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CardGame/model/GameEngineImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CardGame/model/PlayingCardImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CardGame/model/PlayingCardImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CardGame/model/SimplePlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CardGame/model/SimplePlayer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CardGame/view/GameEngineCallbackImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CardGame/view/GameEngineCallbackImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/GameEngineImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/GameEngineImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/PlayingCardImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/PlayingCardImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/SimplePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/SimplePlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/GameEngineCallbackImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/GameEngineCallbackImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +49,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="ProjectId" id="1gB2KWz5JHUXGobVtiZf0ayR4af" />
@@ -88,15 +90,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -179,7 +179,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597764846990</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Revert &quot;CardGame 1.4&quot;&#10;&#10;This reverts commit d194e1d5">
+      <created>1597923528260</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1597923528260</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,7 +210,8 @@
     <MESSAGE value="CardGame 1.2&#10;&#10;Few more updates." />
     <MESSAGE value="CardGame 1.3&#10;&#10;Some major changes including throwing exceptions, unmodifiable collections, updating PlayingCard.toString." />
     <MESSAGE value="CardGame 1.3&#10;&#10;Some major changes including throwing exceptions, unmodifiable collections, updating PlayingCard.toString and callback implementations." />
-    <option name="LAST_COMMIT_MESSAGE" value="CardGame 1.3&#10;&#10;Some major changes including throwing exceptions, unmodifiable collections, updating PlayingCard.toString and callback implementations." />
+    <MESSAGE value="Revert &quot;CardGame 1.4&quot;&#10;&#10;This reverts commit d194e1d5" />
+    <option name="LAST_COMMIT_MESSAGE" value="Revert &quot;CardGame 1.4&quot;&#10;&#10;This reverts commit d194e1d5" />
   </component>
   <component name="WindowStateProjectService">
     <state x="594" y="213" key="#Inspections" timestamp="1597806706680">
@@ -214,38 +222,42 @@
       <screen x="0" y="23" width="1920" height="1009" />
     </state>
     <state x="424" y="189" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597574086123" />
-    <state x="100" y="123" width="1720" height="809" key="DiffContextDialog" timestamp="1597764924000">
+    <state x="503" y="106" key="CommitChangelistDialog2" timestamp="1597923527587">
       <screen x="0" y="23" width="1920" height="1009" />
     </state>
-    <state x="100" y="123" width="1720" height="809" key="DiffContextDialog/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597764924000" />
-    <state width="1878" height="274" key="GridCell.Tab.0.bottom" timestamp="1597812313296">
+    <state x="503" y="106" key="CommitChangelistDialog2/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597923527587" />
+    <state x="100" y="123" width="1720" height="809" key="DiffContextDialog" timestamp="1597923516686">
       <screen x="0" y="23" width="1920" height="1009" />
     </state>
-    <state width="1878" height="274" key="GridCell.Tab.0.bottom/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597812313296" />
-    <state width="1878" height="274" key="GridCell.Tab.0.center" timestamp="1597812313295">
+    <state x="100" y="123" width="1720" height="809" key="DiffContextDialog/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597923516686" />
+    <state width="1878" height="274" key="GridCell.Tab.0.bottom" timestamp="1597923906805">
       <screen x="0" y="23" width="1920" height="1009" />
     </state>
-    <state width="1878" height="274" key="GridCell.Tab.0.center/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597812313295" />
-    <state width="1878" height="274" key="GridCell.Tab.0.left" timestamp="1597812313293">
+    <state width="1878" height="274" key="GridCell.Tab.0.bottom/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597923906805" />
+    <state width="1878" height="274" key="GridCell.Tab.0.center" timestamp="1597923906802">
       <screen x="0" y="23" width="1920" height="1009" />
     </state>
-    <state width="1878" height="274" key="GridCell.Tab.0.left/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597812313293" />
-    <state width="1878" height="274" key="GridCell.Tab.0.right" timestamp="1597812313296">
+    <state width="1878" height="274" key="GridCell.Tab.0.center/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597923906802" />
+    <state width="1878" height="274" key="GridCell.Tab.0.left" timestamp="1597923906801">
       <screen x="0" y="23" width="1920" height="1009" />
     </state>
-    <state width="1878" height="274" key="GridCell.Tab.0.right/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597812313296" />
-    <state x="461" y="314" key="MultipleFileMergeDialog" timestamp="1597764882931">
+    <state width="1878" height="274" key="GridCell.Tab.0.left/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597923906801" />
+    <state width="1878" height="274" key="GridCell.Tab.0.right" timestamp="1597923906803">
       <screen x="0" y="23" width="1920" height="1009" />
     </state>
-    <state x="461" y="314" key="MultipleFileMergeDialog/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597764882931" />
-    <state x="469" y="166" key="SettingsEditor" timestamp="1597636129744">
+    <state width="1878" height="274" key="GridCell.Tab.0.right/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597923906803" />
+    <state x="461" y="314" key="MultipleFileMergeDialog" timestamp="1597923543646">
       <screen x="0" y="23" width="1920" height="1009" />
     </state>
-    <state x="469" y="166" key="SettingsEditor/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597636129744" />
-    <state x="560" y="267" key="Vcs.Push.Dialog.v2" timestamp="1597764908038">
+    <state x="461" y="314" key="MultipleFileMergeDialog/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597923543646" />
+    <state x="469" y="166" key="SettingsEditor" timestamp="1597924094001">
       <screen x="0" y="23" width="1920" height="1009" />
     </state>
-    <state x="560" y="267" key="Vcs.Push.Dialog.v2/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597764908038" />
+    <state x="469" y="166" key="SettingsEditor/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597924094000" />
+    <state x="560" y="267" key="Vcs.Push.Dialog.v2" timestamp="1597923550884">
+      <screen x="0" y="23" width="1920" height="1009" />
+    </state>
+    <state x="560" y="267" key="Vcs.Push.Dialog.v2/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597923550884" />
     <state x="682" y="268" key="VcsDiffUtil.ChangesDialog" timestamp="1597631537009">
       <screen x="0" y="23" width="1920" height="1009" />
     </state>
