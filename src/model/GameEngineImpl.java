@@ -22,7 +22,7 @@ public class GameEngineImpl implements GameEngine
     @Override
     public void dealPlayer(Player player, int delay) throws IllegalArgumentException
     {
-        if (delay < 0 || delay > 1000)
+        if (!PLAYERS.containsValue(player) || delay < 0 || delay > 1000)
             throw new IllegalArgumentException();
 
         PlayingCard card;
