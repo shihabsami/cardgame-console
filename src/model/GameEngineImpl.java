@@ -122,17 +122,18 @@ public class GameEngineImpl implements GameEngine
      */
     private void logger(Player player, PlayingCard card, int playerPoints)
     {
-        if (playerPoints > BUST_LEVEL)
+        for (GameEngineCallback callback : CALLBACKS)
         {
-            // log the details of the card that caused the bust
-            for (GameEngineCallback callback : CALLBACKS)
+            if (playerPoints > BUST_LEVEL)
+            {
+                // log the details of the card that caused the bust
                 callback.bustCard(player, card, this);
-        }
-        else
-        {
-            // log the details of the dealt card
-            for (GameEngineCallback callback : CALLBACKS)
+            }
+            else
+            {
+                // log the details of the dealt card
                 callback.nextCard(player, card, this);
+            }
         }
     }
 
@@ -144,17 +145,18 @@ public class GameEngineImpl implements GameEngine
      */
     private void logger(PlayingCard card, int housePoints)
     {
-        if (housePoints > BUST_LEVEL)
+        for (GameEngineCallback callback : CALLBACKS)
         {
-            // log the details of the card that caused the bust
-            for (GameEngineCallback callback : CALLBACKS)
+            if (housePoints > BUST_LEVEL)
+            {
+                // log the details of the card that caused the bust
                 callback.houseBustCard(card, this);
-        }
-        else
-        {
-            // log the details of the dealt card
-            for (GameEngineCallback callback : CALLBACKS)
+            }
+            else
+            {
+                // log the details of the dealt card
                 callback.nextHouseCard(card, this);
+            }
         }
     }
 

@@ -55,7 +55,7 @@ public class GameEngineCallbackImpl implements GameEngineCallback
     public void bustCard(Player player, PlayingCard card, GameEngine engine)
     {
         // intermediate results logged at Level.FINE
-        logger.log(Level.INFO, String.format("Card Dealt to %s .. %s", player.getPlayerName(), card.toString()));
+        logger.log(Level.INFO, String.format("Card Dealt to %s .. %s ... YOU BUSTED!", player.getPlayerName(), card.toString()));
     }
 
     @Override
