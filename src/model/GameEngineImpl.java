@@ -7,6 +7,7 @@ import java.util.TreeMap;
 import java.util.Deque;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.NoSuchElementException;
 
 import model.interfaces.GameEngine;
 import model.interfaces.Player;
@@ -15,14 +16,20 @@ import view.interfaces.GameEngineCallback;
 
 public class GameEngineImpl implements GameEngine
 {
-    private Deque<PlayingCard> deck = getShuffledHalfDeck();
-    private final Map<String, Player> PLAYERS = new TreeMap<>();
-    private final List<GameEngineCallback> CALLBACKS = new LinkedList<>();
+    private Deque<PlayingCard> deck;
+    private Map<String, Player> players = new TreeMap<>();
+    private List<GameEngineCallback> callbacks = new LinkedList<>();
+
+    public GameEngineImpl()
+    {
+        // Initialise the deck of cards
+        this.deck = getShuffledHalfDeck();
+    }
 
     @Override
     public void dealPlayer(Player player, int delay) throws IllegalArgumentException
     {
-        if (!PLAYERS.containsValue(player) || delay < 0 || delay > 1000)
+        if (!players.containsValue(player) || delay < 0 || delay > 1000)
             throw new IllegalArgumentException();
 
         PlayingCard card;
@@ -49,7 +56,7 @@ public class GameEngineImpl implements GameEngine
         player.setResult(playerPoints);
 
         // log the player's results of the round
-        for (GameEngineCallback callback : CALLBACKS)
+        for (GameEngineCallback callback : callbacks)
             callback.result(player, playerPoints, this);
     }
 
@@ -80,15 +87,15 @@ public class GameEngineImpl implements GameEngine
         }
 
         // determine the win/loss of players and update attributes accordingly
-        for (Player player : PLAYERS.values())
+        for (Player player : players.values())
             applyWinLoss(player, housePoints);
 
         // log final results once round ends
-        for (GameEngineCallback callback : CALLBACKS)
+        for (GameEngineCallback callback : callbacks)
             callback.houseResult(housePoints, this);
 
         // reset players' previous bet for next round
-        for (Player player : PLAYERS.values())
+        for (Player player : players.values())
             player.resetBet();
 
         // reset the deck of cards once round ends
@@ -103,15 +110,24 @@ public class GameEngineImpl implements GameEngine
      */
     private PlayingCard dealCard(int delay)
     {
+        PlayingCard card = null;
+
         try
         {
             Thread.sleep(delay);
+            card = deck.pop();
         }
         catch (InterruptedException exception)
         {
             exception.printStackTrace();
         }
-        return deck.pop();
+        catch (NoSuchElementException exception)
+        {
+            // Get a new deck if the current deck runs out of cards
+            deck = getShuffledHalfDeck();
+        }
+
+        return card;
     }
 
     /** Utility method to log the player's round events.
@@ -122,7 +138,7 @@ public class GameEngineImpl implements GameEngine
      */
     private void logger(Player player, PlayingCard card, int playerPoints)
     {
-        for (GameEngineCallback callback : CALLBACKS)
+        for (GameEngineCallback callback : callbacks)
         {
             if (playerPoints > BUST_LEVEL)
             {
@@ -145,7 +161,7 @@ public class GameEngineImpl implements GameEngine
      */
     private void logger(PlayingCard card, int housePoints)
     {
-        for (GameEngineCallback callback : CALLBACKS)
+        for (GameEngineCallback callback : callbacks)
         {
             if (housePoints > BUST_LEVEL)
             {
@@ -174,18 +190,18 @@ public class GameEngineImpl implements GameEngine
     public void addPlayer(Player player)
     {
         // if player with the same id exists, then replace the previous player
-        if (PLAYERS.containsKey(player.getPlayerId()))
-            PLAYERS.replace(player.getPlayerId(), player);
+        if (players.containsKey(player.getPlayerId()))
+            players.replace(player.getPlayerId(), player);
         else
-            PLAYERS.put(player.getPlayerId(), player);
+            players.put(player.getPlayerId(), player);
     }
 
     @Override
     public Player getPlayer(String id)
     {
         // if the player exists in the collection
-        if (PLAYERS.containsKey(id))
-            return PLAYERS.get(id);
+        if (players.containsKey(id))
+            return players.get(id);
 
         return null;
     }
@@ -194,9 +210,9 @@ public class GameEngineImpl implements GameEngine
     public boolean removePlayer(Player player)
     {
         // remove if the player exists in the collection
-        if (PLAYERS.containsKey(player.getPlayerId()))
+        if (players.containsKey(player.getPlayerId()))
         {
-            PLAYERS.remove(player.getPlayerId());
+            players.remove(player.getPlayerId());
             return true;
         }
         return false;
@@ -212,16 +228,16 @@ public class GameEngineImpl implements GameEngine
     public void addGameEngineCallback(GameEngineCallback gameEngineCallback)
     {
         // add game engine callback
-        CALLBACKS.add(gameEngineCallback);
+        callbacks.add(gameEngineCallback);
     }
 
     @Override
     public boolean removeGameEngineCallback(GameEngineCallback gameEngineCallback)
     {
         // remove game engine callback if it exists in the collection
-        if (CALLBACKS.contains(gameEngineCallback))
+        if (callbacks.contains(gameEngineCallback))
         {
-            CALLBACKS.remove(gameEngineCallback);
+            callbacks.remove(gameEngineCallback);
             return true;
         }
         return false;
@@ -231,7 +247,7 @@ public class GameEngineImpl implements GameEngine
     public Collection<Player> getAllPlayers()
     {
         // the collection containing all the players
-        return Collections.unmodifiableCollection(PLAYERS.values());
+        return Collections.unmodifiableCollection(players.values());
     }
 
     @Override

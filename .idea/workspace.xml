@@ -27,7 +27,10 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="396aa864-4d88-4aa5-9471-7f0b4092f82d" name="Default Changelist" comment="CardGame 1.5&#10;&#10;Experimental changes." />
+    <list default="true" id="396aa864-4d88-4aa5-9471-7f0b4092f82d" name="Default Changelist" comment="CardGame 1.5&#10;&#10;Experimental changes.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/GameEngineImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/GameEngineImpl.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -95,6 +98,9 @@
       <workItem from="1597654468615" duration="377000" />
       <workItem from="1597763119772" duration="1896000" />
       <workItem from="1597805033133" duration="4320000" />
+      <workItem from="1597977659213" duration="614000" />
+      <workItem from="1597980210040" duration="111000" />
+      <workItem from="1598068936462" duration="620000" />
     </task>
     <task id="LOCAL-00001" summary="CardGame 1.0&#10;&#10;The very first implementation of the card game.">
       <created>1597574261477</created>
@@ -180,7 +186,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597924911949</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="CardGame 1.5&#10;&#10;Experimental changes.">
+      <created>1597977731483</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1597977731483</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,14 +234,18 @@
       <screen x="0" y="23" width="1920" height="1009" />
     </state>
     <state x="424" y="189" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597574086123" />
+    <state x="773" y="250" key="#com.intellij.ide.util.MemberChooser" timestamp="1598069162833">
+      <screen x="0" y="23" width="1920" height="1009" />
+    </state>
+    <state x="773" y="250" key="#com.intellij.ide.util.MemberChooser/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1598069162833" />
     <state x="503" y="106" key="CommitChangelistDialog2" timestamp="1597923527587">
       <screen x="0" y="23" width="1920" height="1009" />
     </state>
     <state x="503" y="106" key="CommitChangelistDialog2/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597923527587" />
-    <state x="100" y="123" width="1720" height="809" key="DiffContextDialog" timestamp="1597923516686">
+    <state x="100" y="123" width="1720" height="809" key="DiffContextDialog" timestamp="1597977774874">
       <screen x="0" y="23" width="1920" height="1009" />
     </state>
-    <state x="100" y="123" width="1720" height="809" key="DiffContextDialog/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597923516686" />
+    <state x="100" y="123" width="1720" height="809" key="DiffContextDialog/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597977774874" />
     <state width="1878" height="338" key="GridCell.Tab.0.bottom" timestamp="1597925109943">
       <screen x="0" y="23" width="1920" height="1009" />
     </state>
@@ -245,18 +262,18 @@
       <screen x="0" y="23" width="1920" height="1009" />
     </state>
     <state width="1878" height="338" key="GridCell.Tab.0.right/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597925109942" />
-    <state x="461" y="314" key="MultipleFileMergeDialog" timestamp="1597924940624">
+    <state x="461" y="314" key="MultipleFileMergeDialog" timestamp="1597977754787">
       <screen x="0" y="23" width="1920" height="1009" />
     </state>
-    <state x="461" y="314" key="MultipleFileMergeDialog/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597924940624" />
+    <state x="461" y="314" key="MultipleFileMergeDialog/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597977754787" />
     <state x="469" y="166" key="SettingsEditor" timestamp="1597925109142">
       <screen x="0" y="23" width="1920" height="1009" />
     </state>
     <state x="469" y="166" key="SettingsEditor/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597925109142" />
-    <state x="560" y="267" key="Vcs.Push.Dialog.v2" timestamp="1597924955064">
+    <state x="560" y="267" key="Vcs.Push.Dialog.v2" timestamp="1597977777136">
       <screen x="0" y="23" width="1920" height="1009" />
     </state>
-    <state x="560" y="267" key="Vcs.Push.Dialog.v2/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597924955064" />
+    <state x="560" y="267" key="Vcs.Push.Dialog.v2/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597977777136" />
     <state x="682" y="268" key="VcsDiffUtil.ChangesDialog" timestamp="1597631537009">
       <screen x="0" y="23" width="1920" height="1009" />
     </state>
