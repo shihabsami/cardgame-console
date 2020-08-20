@@ -1,7 +1,7 @@
 package model;
 
 import java.util.Map;
-import java.util.TreeMap;
+import java.util.HashMap;
 import java.util.List;
 import java.util.LinkedList;
 import java.util.Deque;
@@ -16,7 +16,7 @@ import view.interfaces.GameEngineCallback;
 public class GameEngineImpl implements GameEngine
 {
     private Deque<PlayingCard> deck = getShuffledHalfDeck();
-    private final Map<String, Player> PLAYERS = new TreeMap<>();
+    private final Map<String, Player> PLAYERS = new HashMap<>();
     private final List<GameEngineCallback> CALLBACKS = new LinkedList<>();
 
     @Override
@@ -118,22 +118,21 @@ public class GameEngineImpl implements GameEngine
      *
      * @param player - the Player to whom the card is dealt
      * @param card - the dealt PlayingCard
-     * @param playerPoints - the number of player obtained points as of the last card deal
+     * @param playerPoints - the number of points the player obtained from the round
      */
     private void logger(Player player, PlayingCard card, int playerPoints)
     {
-        for (GameEngineCallback callback : CALLBACKS)
+        if (playerPoints > BUST_LEVEL)
         {
-            if (playerPoints > BUST_LEVEL)
-            {
-                // log the details of the card that caused the bust
+            // log the details of the card that caused the bust
+            for (GameEngineCallback callback : CALLBACKS)
                 callback.bustCard(player, card, this);
-            }
-            else
-            {
-                // log the details of the dealt card
+        }
+        else
+        {
+            // log the details of the dealt card
+            for (GameEngineCallback callback : CALLBACKS)
                 callback.nextCard(player, card, this);
-            }
         }
     }
 
@@ -141,22 +140,21 @@ public class GameEngineImpl implements GameEngine
      * An overload of the previous logger method to log the house's round events.
      *
      * @param card - the dealt PlayingCard
-     * @param housePoints - the number of house obtained points as of the last card deal
+     * @param housePoints - the number of points the house obtained from the round
      */
     private void logger(PlayingCard card, int housePoints)
     {
-        for (GameEngineCallback callback : CALLBACKS)
+        if (housePoints > BUST_LEVEL)
         {
-            if (housePoints > BUST_LEVEL)
-            {
-                // log the details of the card that caused the bust
+            // log the details of the card that caused the bust
+            for (GameEngineCallback callback : CALLBACKS)
                 callback.houseBustCard(card, this);
-            }
-            else
-            {
-                // log the details of the dealt card
+        }
+        else
+        {
+            // log the details of the dealt card
+            for (GameEngineCallback callback : CALLBACKS)
                 callback.nextHouseCard(card, this);
-            }
         }
     }
 
@@ -231,7 +229,11 @@ public class GameEngineImpl implements GameEngine
     public Collection<Player> getAllPlayers()
     {
         // the collection containing all the players
-        return Collections.unmodifiableCollection(PLAYERS.values());
+        List<Player> players = new LinkedList<>(PLAYERS.values());
+
+        // sort player collection by player id
+        players.sort(Collections.reverseOrder());
+        return Collections.unmodifiableCollection(players);
     }
 
     @Override
