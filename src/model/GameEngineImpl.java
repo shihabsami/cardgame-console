@@ -29,8 +29,12 @@ public class GameEngineImpl implements GameEngine
     @Override
     public void dealPlayer(Player player, int delay) throws IllegalArgumentException
     {
-        if (!players.containsValue(player) || delay < 0 || delay > 1000)
+        if (delay < 0 || delay > 1000)
             throw new IllegalArgumentException();
+
+        // prevent dealing players who do not exist in the collection or hasn't placed a bet
+        if (!players.containsValue(player) || player.getBet() == 0)
+            return;
 
         PlayingCard card;
         int playerPoints = 0;
@@ -42,7 +46,7 @@ public class GameEngineImpl implements GameEngine
             playerPoints += card.getScore();
 
             // log the events of this round
-            logger(player, card, playerPoints);
+            logPlayer(player, card, playerPoints);
 
             // if the card causes the player to bust
             if (playerPoints > BUST_LEVEL)
@@ -76,7 +80,7 @@ public class GameEngineImpl implements GameEngine
             housePoints += card.getScore();
 
             // log the events of this round
-            logger(card, housePoints);
+            logHouse(card, housePoints);
 
             // if the card causes the house to bust
             if (housePoints > BUST_LEVEL)
@@ -125,6 +129,7 @@ public class GameEngineImpl implements GameEngine
         {
             // Get a new deck if the current deck runs out of cards
             deck = getShuffledHalfDeck();
+            card = deck.pop();
         }
 
         return card;
@@ -136,43 +141,35 @@ public class GameEngineImpl implements GameEngine
      * @param card - the dealt PlayingCard
      * @param playerPoints - the number of points the player obtained from the round
      */
-    private void logger(Player player, PlayingCard card, int playerPoints)
+    private void logPlayer(Player player, PlayingCard card, int playerPoints)
     {
         for (GameEngineCallback callback : callbacks)
         {
             if (playerPoints > BUST_LEVEL)
-            {
                 // log the details of the card that caused the bust
                 callback.bustCard(player, card, this);
-            }
             else
-            {
                 // log the details of the dealt card
                 callback.nextCard(player, card, this);
-            }
         }
     }
 
     /**
-     * An overload of the previous logger method to log the house's round events.
+     * House's version of the logger method to log the house's round events.
      *
      * @param card - the dealt PlayingCard
      * @param housePoints - the number of points the house obtained from the round
      */
-    private void logger(PlayingCard card, int housePoints)
+    private void logHouse(PlayingCard card, int housePoints)
     {
         for (GameEngineCallback callback : callbacks)
         {
             if (housePoints > BUST_LEVEL)
-            {
                 // log the details of the card that caused the bust
                 callback.houseBustCard(card, this);
-            }
             else
-            {
                 // log the details of the dealt card
                 callback.nextHouseCard(card, this);
-            }
         }
     }
 
@@ -200,10 +197,7 @@ public class GameEngineImpl implements GameEngine
     public Player getPlayer(String id)
     {
         // if the player exists in the collection
-        if (players.containsKey(id))
-            return players.get(id);
-
-        return null;
+        return players.getOrDefault(id, null);
     }
 
     @Override

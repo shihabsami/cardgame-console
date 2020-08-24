@@ -69,14 +69,14 @@ public class GameEngineCallbackImpl implements GameEngineCallback
     public void nextHouseCard(PlayingCard card, GameEngine engine)
     {
         // intermediate results logged at Level.FINE
-        logger.log(Level.INFO, String.format("Card Dealt to House .. %s", card.toString()));
+        logger.log(Level.FINE, String.format("Card Dealt to House .. %s", card.toString()));
     }
 
     @Override
     public void houseBustCard(PlayingCard card, GameEngine engine)
     {
         // intermediate results logged at Level.FINE
-        logger.log(Level.FINE, String.format("Card Dealt to House .. %s ... HOUSE BUSTED!", card.toString()));
+        logger.log(Level.INFO, String.format("Card Dealt to House .. %s ... HOUSE BUSTED!", card.toString()));
     }
 
     @Override

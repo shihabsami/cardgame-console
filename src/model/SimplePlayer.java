@@ -6,15 +6,18 @@ public class SimplePlayer implements Player
 {
     private String id;
     private String playerName;
-    private int points;
+    private int initialPoints;
     private int bet;
     private int result;
 
     public SimplePlayer(String id, String playerName, int initialPoints)
     {
+        if (id == null || playerName == null || initialPoints < 0)
+            throw new IllegalArgumentException();
+
         this.id = id;
         this.playerName = playerName;
-        this.points = initialPoints;
+        this.initialPoints = initialPoints;
     }
 
     @Override
@@ -32,13 +35,13 @@ public class SimplePlayer implements Player
     @Override
     public int getPoints()
     {
-        return points;
+        return initialPoints;
     }
 
     @Override
     public void setPoints(int points)
     {
-        this.points = points;
+        this.initialPoints = points;
     }
 
     @Override
@@ -51,13 +54,12 @@ public class SimplePlayer implements Player
     public boolean setBet(int bet)
     {
         // place the bet if player has sufficient points to bet
-        if (bet > 0 && points > bet)
+        if (bet > 0 && initialPoints >= bet)
         {
             this.bet = bet;
             return true;
         }
         else if (bet == 0) resetBet();
-
         return false;
     }
 
@@ -121,6 +123,6 @@ public class SimplePlayer implements Player
     public String toString()
     {
         return String.format("Player: id=%s, name=%s, bet=%d, points=%d, RESULT .. %d",
-                id, playerName, bet, points, result);
+                id, playerName, bet, initialPoints, result);
     }
 }

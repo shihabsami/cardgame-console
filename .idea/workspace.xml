@@ -29,7 +29,10 @@
   <component name="ChangeListManager">
     <list default="true" id="396aa864-4d88-4aa5-9471-7f0b4092f82d" name="Default Changelist" comment="CardGame 1.5&#10;&#10;Experimental changes.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/SimpleTestClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/SimpleTestClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/GameEngineImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/GameEngineImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/SimplePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/SimplePlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/GameEngineCallbackImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/GameEngineCallbackImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +87,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -100,7 +114,8 @@
       <workItem from="1597805033133" duration="4320000" />
       <workItem from="1597977659213" duration="614000" />
       <workItem from="1597980210040" duration="111000" />
-      <workItem from="1598068936462" duration="620000" />
+      <workItem from="1598068936462" duration="881000" />
+      <workItem from="1598233194632" duration="2498000" />
     </task>
     <task id="LOCAL-00001" summary="CardGame 1.0&#10;&#10;The very first implementation of the card game.">
       <created>1597574261477</created>
@@ -193,7 +208,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597977731483</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="CardGame 1.5&#10;&#10;Experimental changes.">
+      <created>1598069654084</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1598069654084</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -238,6 +260,10 @@
       <screen x="0" y="23" width="1920" height="1009" />
     </state>
     <state x="773" y="250" key="#com.intellij.ide.util.MemberChooser/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1598069162833" />
+    <state x="573" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1598235979623">
+      <screen x="0" y="23" width="1920" height="1009" />
+    </state>
+    <state x="573" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1598235979623" />
     <state x="503" y="106" key="CommitChangelistDialog2" timestamp="1597923527587">
       <screen x="0" y="23" width="1920" height="1009" />
     </state>
@@ -246,34 +272,34 @@
       <screen x="0" y="23" width="1920" height="1009" />
     </state>
     <state x="100" y="123" width="1720" height="809" key="DiffContextDialog/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597977774874" />
-    <state width="1878" height="338" key="GridCell.Tab.0.bottom" timestamp="1597925109943">
+    <state width="1878" height="453" key="GridCell.Tab.0.bottom" timestamp="1598235716460">
       <screen x="0" y="23" width="1920" height="1009" />
     </state>
-    <state width="1878" height="338" key="GridCell.Tab.0.bottom/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597925109943" />
-    <state width="1878" height="338" key="GridCell.Tab.0.center" timestamp="1597925109941">
+    <state width="1878" height="453" key="GridCell.Tab.0.bottom/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1598235716460" />
+    <state width="1878" height="453" key="GridCell.Tab.0.center" timestamp="1598235716456">
       <screen x="0" y="23" width="1920" height="1009" />
     </state>
-    <state width="1878" height="338" key="GridCell.Tab.0.center/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597925109941" />
-    <state width="1878" height="338" key="GridCell.Tab.0.left" timestamp="1597925109941">
+    <state width="1878" height="453" key="GridCell.Tab.0.center/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1598235716456" />
+    <state width="1878" height="453" key="GridCell.Tab.0.left" timestamp="1598235716453">
       <screen x="0" y="23" width="1920" height="1009" />
     </state>
-    <state width="1878" height="338" key="GridCell.Tab.0.left/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597925109941" />
-    <state width="1878" height="338" key="GridCell.Tab.0.right" timestamp="1597925109942">
+    <state width="1878" height="453" key="GridCell.Tab.0.left/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1598235716453" />
+    <state width="1878" height="453" key="GridCell.Tab.0.right" timestamp="1598235716458">
       <screen x="0" y="23" width="1920" height="1009" />
     </state>
-    <state width="1878" height="338" key="GridCell.Tab.0.right/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597925109942" />
-    <state x="461" y="314" key="MultipleFileMergeDialog" timestamp="1597977754787">
+    <state width="1878" height="453" key="GridCell.Tab.0.right/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1598235716458" />
+    <state x="461" y="314" key="MultipleFileMergeDialog" timestamp="1598069746021">
       <screen x="0" y="23" width="1920" height="1009" />
     </state>
-    <state x="461" y="314" key="MultipleFileMergeDialog/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597977754787" />
+    <state x="461" y="314" key="MultipleFileMergeDialog/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1598069746021" />
     <state x="469" y="166" key="SettingsEditor" timestamp="1597925109142">
       <screen x="0" y="23" width="1920" height="1009" />
     </state>
     <state x="469" y="166" key="SettingsEditor/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597925109142" />
-    <state x="560" y="267" key="Vcs.Push.Dialog.v2" timestamp="1597977777136">
+    <state x="560" y="267" key="Vcs.Push.Dialog.v2" timestamp="1598069758139">
       <screen x="0" y="23" width="1920" height="1009" />
     </state>
-    <state x="560" y="267" key="Vcs.Push.Dialog.v2/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597977777136" />
+    <state x="560" y="267" key="Vcs.Push.Dialog.v2/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1598069758139" />
     <state x="682" y="268" key="VcsDiffUtil.ChangesDialog" timestamp="1597631537009">
       <screen x="0" y="23" width="1920" height="1009" />
     </state>
@@ -282,10 +308,10 @@
       <screen x="0" y="23" width="1920" height="1009" />
     </state>
     <state x="492" y="270" width="935" height="617" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597764488220" />
-    <state x="683" y="426" key="git4idea.rebase.GitUnstructuredEditor" timestamp="1597631795486">
+    <state x="683" y="426" key="git4idea.rebase.GitUnstructuredEditor" timestamp="1598069749998">
       <screen x="0" y="23" width="1920" height="1009" />
     </state>
-    <state x="683" y="426" key="git4idea.rebase.GitUnstructuredEditor/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1597631795486" />
+    <state x="683" y="426" key="git4idea.rebase.GitUnstructuredEditor/0.23.1920.1009/-1366.168.1366.745@0.23.1920.1009" timestamp="1598069749998" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
